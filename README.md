@@ -1,0 +1,7 @@
+**Question #1**
+
+I made few changes to improve the functionality and error handling of the code. First I updated the Content-Type header from application/x-www-form-urlencoded to application/json, as the Telesign API requires this format for proper data handling. Next, I added cURL error handling using curl_errno and curl_error to catch any issues with the cURL request itself, which helps with debugging connection problems. I also included a check for the HTTP status code returned by the API, so if the API request fails an error message will be printed for better troubleshooting. I logged unexpected API responses by adding an error message to display if the phone_type field is missing or incorrect in the response, making it easier to debug issues related to the API's output.
+
+**Question #2**
+
+I wrote a PHP script to generate a scatter plot from a Csv file using the pChart library. I included the necessary pChart classes at the beginning. Then, I loaded the Csv file containing the data using file() and str_getcsv() to split each row into columns. I extracted the X and Y values from the Csv data into two arrays. After that I created a pData object and added the X and Y values to it, setting the axis names for the chart. I then created a pImage object to configure the chart's appearances and specifying the chart's dimensions. Using the drawScatterPlotChart(), I generated the scatter plot and saved the image as "scatter_plot.png". Finally, I output a message confirming the plot has been saved.
